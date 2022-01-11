@@ -10,4 +10,7 @@ class User < ApplicationRecord
       validates :nickname
       validates :birthday
   end
+
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'が不正な値です'
 end
