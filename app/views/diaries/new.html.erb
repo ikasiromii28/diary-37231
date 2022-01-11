@@ -1,0 +1,13 @@
+<div class="contents row">
+  <div class="container">
+    <h3>日記を書く</h3>
+    <%= form_with(model: @tweet, local: true) do |form| %>
+      <%= form.text_field :title, placeholder: "title" %>
+      <%= form.text_field :image, placeholder: "Image Url" %>
+      <%= form.collection_select(:todays_mood_id, TodaysMood.all, :id, :name, {}, {class:"todays-select"}) %>
+      <%= form.collection_select(:todays_weather_id, TodaysWeather.all, :id, :name, {}, {class:"todays-select"}) %>
+      <%= form.text_area :text, placeholder: "text", rows: "10" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  </div>
+</div>

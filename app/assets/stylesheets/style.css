@@ -1065,3 +1065,12 @@ footer p {
   margin: 0 auto;
   padding-top: 20px;
 }
+
+.todays-select{
+  height: 30px;
+  width: 250px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px 10px 0px;
+}
