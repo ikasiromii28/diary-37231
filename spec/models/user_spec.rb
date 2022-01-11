@@ -25,14 +25,14 @@ RSpec.describe User, type: :model do
       it 'emailに@が含まれないと登録できない' do
         @user.email = 'aaagmail.com'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email is invalid")
+        expect(@user.errors.full_messages).to include('Email is invalid')
       end
       it 'emailが他のユーザーと重複していると登録できない' do
         @user.save
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         another_user.valid?
-        expect(another_user.errors.full_messages).to include("Email has already been taken")
+        expect(another_user.errors.full_messages).to include('Email has already been taken')
       end
       it 'passwordが空だと登録できない' do
         @user.password = nil
@@ -43,19 +43,19 @@ RSpec.describe User, type: :model do
         @user.password = '12345'
         @user.password_confirmation = '12345'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+        expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
       it 'passwordが数字だけでは登録できない' do
         @user.password = '123456'
         @user.password_confirmation = '123456'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password が不正な値です")
+        expect(@user.errors.full_messages).to include('Password が不正な値です')
       end
       it 'passwordが英字だけでは登録できない' do
         @user.password = 'abcdef'
         @user.password_confirmation = 'abcdef'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password が不正な値です")
+        expect(@user.errors.full_messages).to include('Password が不正な値です')
       end
       it 'passwordとpassword_confirmationが一致しないと登録できない' do
         @user.password = '123456'
