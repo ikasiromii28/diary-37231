@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 2022_01_11_061439) do
   create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "text", null: false
-    t.integer "todays_mood_id"
-    t.integer "todays_weather_id"
+    t.integer "todays_mood_id", null: false
+    t.integer "todays_weather_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
