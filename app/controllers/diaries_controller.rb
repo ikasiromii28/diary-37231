@@ -10,15 +10,15 @@ class DiariesController < ApplicationController
   end
 
   def create
-    @diary = Diary.new(diary_params)
-    binding.pry
+    Diary.create(diary_params)
+    #@diary = Diary.new(diary_params)
     # @diary = Diary.find_by(id: params[:id])
     # @user = User.find_by(id: @diary.user_id)
-     if @diary.save
-       redirect_to root_path
-     else
-       render :new
-     end
+    #  if @diary.save
+    #    redirect_to root_path
+    #  else
+    #    render :new
+    #  end
   end
 
   private
