@@ -1065,3 +1065,21 @@ footer p {
   margin: 0 auto;
   padding-top: 20px;
 }
+
+.todays_mood-select{
+  height: 30px;
+  width: 250px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  margin: 5px 10px 10px 0px;
+}
+
+.todays_weather-select{
+  height: 30px;
+  width: 250px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 10px 10px 0px;
+}
